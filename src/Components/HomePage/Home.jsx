@@ -107,8 +107,7 @@ const Home = memo(() => {
                 <Carousel
                   tabbed={false}
                   slidesToScroll={1}
-                  slidesToShow={5}
-                  slideCount={5}
+                  slidesToShow={6}
                   wrapAround={true}
                   autoplay={true}
                   animation="zoom"
