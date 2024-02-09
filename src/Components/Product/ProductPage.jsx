@@ -37,7 +37,7 @@ const ProductPage = memo(() => {
     useSelector((state) => state.cart);
   const isLoggedIn = useSelector((state) => state.header.isLoggedIn);
 
-  dispatch(setSingleProduct(productdata));
+  // dispatch(setSingleProduct(productdata));
   // console.log(param.asin);
 
   useEffect(() => {
@@ -72,6 +72,7 @@ const ProductPage = memo(() => {
         dispatch(setPrice(price));
         i++;
         // return { ...response.data, cartItemCount };
+        dispatch(setSingleProduct({responnse.data, cartItemCount}));
       } catch (error) {
         console.error(error);
         return null;
