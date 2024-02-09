@@ -72,7 +72,6 @@ const ProductPage = memo(() => {
         dispatch(setPrice(price));
         i++;
         // return { ...response.data, cartItemCount };
-        dispatch(setSingleProduct({responnse.data, cartItemCount}));
       } catch (error) {
         console.error(error);
         return null;
