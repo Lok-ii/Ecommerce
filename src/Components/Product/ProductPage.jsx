@@ -39,6 +39,7 @@ const ProductPage = memo(() => {
   // dispatch(setSingleProduct(productdata));
   // console.log(param.asin);
   const apiKey = (import.meta.env.MODE === "PROD" && process.env.AMAZON_ASIN) ? process.env.AMAZON_ASIN : import.meta.env.VITE_AMAZON_ASIN;
+  console.log(import.meta.env);
   console.log("API Key:", apiKey);
   
   useEffect(() => {
