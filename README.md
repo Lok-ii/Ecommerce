@@ -1,4 +1,4 @@
-# ExpressBuy - E-Commerce Platform
+# ExpressBuy - E-Commerce Platform - [<a href="https://express-buy-umber.vercel.app/" >Live Demo</a>]
 
 ## Overview
 ExpressBuy is a full-fledged E-Commerce platform built using Vite + React for the frontend, Firebase for authentication, Firestore for database management, and various other libraries for UI components and functionality. The platform offers a seamless shopping experience, allowing users to browse a wide range of products, add items to their cart, and securely complete their purchase.
