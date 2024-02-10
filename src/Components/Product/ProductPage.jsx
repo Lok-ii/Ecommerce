@@ -28,7 +28,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import ProgressBar from "react-bootstrap/ProgressBar";
 // import productdata from "../../assets/ProductData/SingleProduct.json";
 
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = import.meta.env.AMAZON_ASIN;
 
 const ProductPage = memo(() => {
   const param = useParams();

@@ -11,7 +11,7 @@ import { getDataFromStore } from "../../utils/getDataFromStore";
 import { NavLink } from "react-router-dom";
 
 const Cart = memo(() => {
-  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiKey = import.meta.env.AMAZON_ASIN;
 
   const dispatch = useDispatch();
   const { cartItems, currentAsin, productData, totalCartAmount } = useSelector(
