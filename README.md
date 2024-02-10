@@ -80,5 +80,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries or feedback, please contact Your Name.
+For inquiries or feedback, please contact <a href="" mailto="lokeshkataria.work@gmail.com">Lokesh Kataria</a>.
 
