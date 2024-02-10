@@ -24,7 +24,7 @@ import Slider from "react-slick";
 // import ProductCard from "../Product/ProductCard";
 import { ShimmerPostItem } from "react-shimmer-effects";
 import Carousel from "nuka-carousel";
-import { easeCircleOut, easeElasticOut } from 'd3-ease';
+import { easeCircleOut, easeElasticOut } from "d3-ease";
 // import { fetchLocalData } from "../../utils/localApi";
 
 const ProductCard = lazy(() => import("../Product/ProductCard"));
@@ -85,16 +85,20 @@ const Home = memo(() => {
 
       <div className="w-full flex flex-col gap-8">
         <div className="flashSale">
-          <div>
-            <p>Today's</p>
+          <div className="flex flex-col gap-2">
+            <div className="flex border-l-[1rem] text-red-300 font-bold border-lg border-red-300 rounded-sm pl-3 text-lg">
+              <p>Today's</p>
+            </div>
+            <div className="text-[3rem] flex font-bold item-center gap-16 pl-8">
+              <p>Flash Sale</p>
+              <Countdown date={Date.now() + 259200000}>
+                <Completionist />
+              </Countdown>
+            </div>
           </div>
-          <div>
-            <p>Flash Sale</p>
-            <Countdown date={Date.now() + 259200000}>
-              <Completionist />
-            </Countdown>
+          <div className="flashSaleItems">
+            
           </div>
-          <div className="flashSaleItems"></div>
         </div>
 
         {productsList.map((category, id) => {
@@ -108,6 +112,7 @@ const Home = memo(() => {
                   tabbed={false}
                   slidesToScroll={1}
                   slidesToShow={6}
+                  slideCount={5}
                   wrapAround={true}
                   autoplay={true}
                   animation="zoom"

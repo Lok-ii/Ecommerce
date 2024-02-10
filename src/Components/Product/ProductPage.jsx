@@ -26,7 +26,7 @@ import {
 import parse from "html-react-parser";
 import { FaCircleUser } from "react-icons/fa6";
 import ProgressBar from "react-bootstrap/ProgressBar";
-// import productdata from "../../assets/ProductData/SingleProduct.json";
+import productdata from "../../assets/ProductData/SingleProduct.json";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -37,58 +37,58 @@ const ProductPage = memo(() => {
     useSelector((state) => state.cart);
   const isLoggedIn = useSelector((state) => state.header.isLoggedIn);
 
-  // dispatch(setSingleProduct(productdata));
+  dispatch(setSingleProduct(productdata));
   // console.log(param.asin);
 
-  useEffect(() => {
-    let i = 0;
-    const fetchProductData = async () => {
-      console.log(param.asin);
-      const params = {
-        api_key: apiKey,
-        amazon_domain: "amazon.in",
-        asin: param.asin,
-        type: "product",
-      };
+  // useEffect(() => {
+  //   let i = 0;
+  //   const fetchProductData = async () => {
+  //     console.log(param.asin);
+  //     const params = {
+  //       api_key: apiKey,
+  //       amazon_domain: "amazon.in",
+  //       asin: param.asin,
+  //       type: "product",
+  //     };
 
-      try {
-        const response = await axios.get(
-          "https://api.asindataapi.com/request",
-          { params },
-        );
-        // console.log(response);
-        console.log({ ...response.data, itemCount: cartItems[i]?.itemCount });
-        dispatch(
-          setSingleProduct({
-            ...response.data,
-            itemCount: cartItems[i]?.itemCount,
-          }),
-        );
-        dispatch(setMainImage(response.data.product.main_image.link));
+  //     try {
+  //       const response = await axios.get(
+  //         "https://api.asindataapi.com/request",
+  //         { params },
+  //       );
+  //       // console.log(response);
+  //       console.log({ ...response.data, itemCount: cartItems[i]?.itemCount });
+  //       dispatch(
+  //         setSingleProduct({
+  //           ...response.data,
+  //           itemCount: cartItems[i]?.itemCount,
+  //         }),
+  //       );
+  //       dispatch(setMainImage(response.data.product.main_image.link));
 
-        const price =
-          response.data.product.buybox_winner.price.raw ||
-          response.data.product.buybox_winner.rrp.raw;
-        dispatch(setPrice(price));
-        i++;
-        // return { ...response.data, cartItemCount };
-      } catch (error) {
-        console.error(error);
-        return null;
-      }
-    };
-    fetchProductData();
+  //       const price =
+  //         response.data.product.buybox_winner.price.raw ||
+  //         response.data.product.buybox_winner.rrp.raw;
+  //       dispatch(setPrice(price));
+  //       i++;
+  //       // return { ...response.data, cartItemCount };
+  //     } catch (error) {
+  //       console.error(error);
+  //       return null;
+  //     }
+  //   };
+  //   fetchProductData();
 
-    return () => {
-      dispatch(setSingleProduct({}));
-      dispatch(setMainImage(""));
-      dispatch(setPrice(0));
-    };
-  }, [param.asin]);
+  //   return () => {
+  //     dispatch(setSingleProduct({}));
+  //     dispatch(setMainImage(""));
+  //     dispatch(setPrice(0));
+  //   };
+  // }, [param.asin]);
 
-  useEffect(() => {
-    getDataFromStore(dispatch);
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   getDataFromStore(dispatch);
+  // }, [isLoggedIn]);
 
   return Object.keys(singleProduct).length !== 0 ? (
     <section className="py-12 sm:py-16">

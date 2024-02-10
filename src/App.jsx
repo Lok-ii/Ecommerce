@@ -16,6 +16,7 @@ import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Cart/Checkout";
 
 function App() {
+  document.title ="ExpressBuy"
   const router = createBrowserRouter([
     {
       path: "/",

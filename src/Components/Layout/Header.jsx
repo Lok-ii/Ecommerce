@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useLocation, Link } from "react-router-dom";
 import { RiSearch2Line } from "react-icons/ri";
 import { AiOutlineHeart } from "react-icons/ai";
 import { LuShoppingCart } from "react-icons/lu";
@@ -18,6 +18,7 @@ import {
 import { setCurrentUser } from "../../redux/authSlice";
 import { userAuthentication } from "../../redux/authSlice";
 import { setCartItemCount, setCart, fetchAndSetCartData } from "../../redux/cartSlice";
+import logo from "../../assets/Images/logo.png";
 
 const Header = memo(() => {
   const navColor = ({ isActive, isPending }) =>
@@ -74,14 +75,14 @@ const Header = memo(() => {
   }, [toggleUserHeight]);
 
   return (
-    <header className="w-full flex justify-between items-center px-8 py-2 z-[10] bg-headerColor backdrop-filter backdrop-blur-lg sticky top-0">
-      <div className="logo">
+    <header className="w-full h-20 flex justify-between items-center px-8 py-2 z-[10] bg-headerColor backdrop-filter backdrop-blur-lg sticky top-0">
+      <Link to={"/"} className="logo">
         <img
-          className="h-8 w-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+          className="h-16 w-auto"
+          src={logo}
           alt="Your Company"
         />
-      </div>
+      </Link>
       <nav className="flex items-center justify-center gap-12 font-semibold text-[1.1rem]">
         <NavLink className={navColor} to="/">
           <span className="border-r-[1px] pr-8">Home</span>
@@ -150,7 +151,7 @@ const Header = memo(() => {
       </IconContext.Provider>
       <div
         className={`flex flex-col items-start rounded-lg text-white font-medium absolute right-28 w-[9rem] ${
-          userHeight ? "top-[-15rem]" : "top-[3rem]"
+          userHeight ? "top-[-15rem]" : "top-[5rem]"
         } transition-all duration-300`}
       >
         <p className="bg-gray-500 w-full rounded-t-lg py-2 pl-2 pr-8 hover:text-black cursor-pointer user hover:bg-white">
@@ -169,6 +170,7 @@ const Header = memo(() => {
             dispatch(userAuthentication({ type: "SIGNOUT" }));
             dispatch(setCart({ type: "CLEARDATA", payload: [] }));
             dispatch(setCartItemCount(1));
+            navigateTo("/");
             localStorage.removeItem("currentUser");
           }}
         >
