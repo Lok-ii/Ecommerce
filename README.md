@@ -5,7 +5,7 @@ ExpressBuy is a full-fledged E-Commerce platform built using Vite + React for th
 
 ## Architecture and Technology Stack
 ExpressBuy is built on a modern architecture leveraging the following technologies:
-- **Frontend**: Vite, React, Bootstrap, Material Tailwind, MDB React UI Kit
+- **Frontend**: Vite, React, Bootstrap, TailwindCSS, MDB React UI Kit
 - **State Management**: Redux Toolkit
 - **UI Components**: Headless UI, Heroicons, RCAferati WAC, React Icons, React Slick, React Shimmer Effects
 - **Animations**: GSAP, Web Animation Club
@@ -80,5 +80,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries or feedback, please contact Your Name.
+For inquiries or feedback, please contact <a href="" mailto="lokeshkataria.work@gmail.com">Lokesh Kataria</a>.
 
