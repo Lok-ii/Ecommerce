@@ -42,7 +42,7 @@ const Header = memo(() => {
 
   useEffect(() => {
     if (
-      JSON.parse(localStorage.getItem("currentUser")) !== null && JSON.parse(localStorage.getItem("currentUser")) !== undefined &&
+      JSON.parse(localStorage.getItem("currentUser")) !== null &&
       Object.keys(JSON.parse(localStorage.getItem("currentUser"))).length !== 0
     ) {
       dispatch(setCurrentUser(JSON.parse(localStorage.getItem("currentUser"))));

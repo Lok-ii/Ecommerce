@@ -28,7 +28,6 @@ import { FaCircleUser } from "react-icons/fa6";
 import ProgressBar from "react-bootstrap/ProgressBar";
 // import productdata from "../../assets/ProductData/SingleProduct.json";
 
-const apiKey = process.env.AMAZON_ASIN;
 
 const ProductPage = memo(() => {
   const param = useParams();
@@ -40,6 +39,7 @@ const ProductPage = memo(() => {
   // dispatch(setSingleProduct(productdata));
   // console.log(param.asin);
 
+const apiKey = import.meta.env.MODE === "production" ?  process.env.AMAZON_ASIN : import.meta.env.AMAZON_ASIN;
   useEffect(() => {
     let i = 0;
     const fetchProductData = async () => {
